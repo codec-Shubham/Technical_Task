@@ -1,0 +1,140 @@
+-- phpMyAdmin SQL Dump
+-- version 3.1.3.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: May 15, 2017 at 10:26 AM
+-- Server version: 5.1.33
+-- PHP Version: 5.2.9-2
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `shop_pro`
+--
+CREATE DATABASE `shop_pro` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `shop_pro`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE IF NOT EXISTS `cart` (
+  `p_id` int(30) DEFAULT NULL,
+  `p_name` varchar(40) DEFAULT NULL,
+  `qty` int(40) DEFAULT NULL,
+  `price` int(40) DEFAULT NULL,
+  `image` blob,
+  `user_id` int(40) DEFAULT NULL,
+  `user_email` varchar(40) DEFAULT NULL,
+  `a_price` int(20) DEFAULT NULL,
+  `product_detail` varchar(100) DEFAULT NULL,
+  `discount` int(30) DEFAULT NULL,
+  `i_discount` int(20) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE IF NOT EXISTS `orders` (
+  `p_id` int(20) DEFAULT NULL,
+  `p_name` varchar(30) DEFAULT NULL,
+  `qty` int(30) DEFAULT NULL,
+  `price` int(30) DEFAULT NULL,
+  `image` blob,
+  `user_id` int(30) DEFAULT NULL,
+  `user_email` varchar(40) DEFAULT NULL,
+  `a_price` int(40) DEFAULT NULL,
+  `status` varchar(40) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`p_id`, `p_name`, `qty`, `price`, `image`, `user_id`, `user_email`, `a_price`, `status`) VALUES
+(4, 'Laptop', 1, 35000, 0x6c6170746f702e6a7067, 2, '7140rs@gmail.com', 35000, 'Cancelled'),
+(3, 'Washing Machine', 1, 10000, 0x776d2e6a7067, 2, '7140rs@gmail.com', 10000, 'Delivered'),
+(3, 'Dell Laptop', 1, 25000, 0x6c6170746f702e6a7067, 2, '7140rs@gmail.com', 25000, 'Delivered'),
+(14, 'HP Envey', 1, 32000, 0x6870312e6a7067, 2, '7140rs@gmail.com', 32000, 'Dispatched');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE IF NOT EXISTS `products` (
+  `product_id` int(30) NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(20) DEFAULT NULL,
+  `price` int(30) DEFAULT NULL,
+  `Product_details` varchar(40) DEFAULT NULL,
+  `category` varchar(50) DEFAULT NULL,
+  `image` blob,
+  PRIMARY KEY (`product_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`product_id`, `product_name`, `price`, `Product_details`, `category`, `image`) VALUES
+(1, 'Air Conditioner', 20000, 'LG AC with full features ', 'AC and Fan', 0x61632e6a7067),
+(18, 'Fan', 3000, 'A white fan of high quality', 'AC and Fan', 0x66616e2e6a7067),
+(3, 'Dell Laptop', 25000, 'Dell Inspiron-1532', 'Laptops', 0x6c6170746f702e6a7067),
+(4, 'Washing Machine', 4000, 'Front Door Machine', 'Washing Machines', 0x776d2e6a7067),
+(5, 'LG Referigerators', 13000, 'Multiple Doors Refrigerator', 'Refrigerators', 0x726566322e6a7067),
+(6, 'LG Referigerator', 20000, 'Refrigerator With 10 years warranty', 'Refrigerators', 0x726566312e6a7067),
+(7, 'Referigerator', 10000, 'Single Door ', 'Refrigerators', 0x726566332e6a7067),
+(8, 'Keyboard', 500, 'Logitech Wireless Keyboard', 'Computer and Peripherals', 0x6b6579626f6172642e6a7067),
+(9, 'Wired Mouse', 300, 'Delux Brand Mouse', 'Computer and Peripherals', 0x6d6f7573652e6a7067),
+(10, 'Scannner', 5000, 'HP scanner', 'Computer and Peripherals', 0x7363616e6e6572732e6a7067),
+(11, 'Redmi Note 4', 12999, 'Redmi Note 4', 'Mobiles', 0x6d322e6a7067),
+(12, 'iPhone 6s', 29999, 'Apple iPhone 6s', 'Mobiles', 0x6d332e6a7067),
+(13, 'Apple Laptop ', 60000, 'Apple Laptop with i7 ', 'Laptops', 0x61362e6a7067),
+(14, 'HP Envey', 32000, 'HP 14 inches Laptop', 'Laptops', 0x6870312e6a7067),
+(15, 'Acer Laptop', 30000, 'Acer 15 inches Laptop', 'Laptops', 0x616365722e6a7067),
+(16, 'L.C.D', 12000, 'Sony 32 inches LCD', 'T.V.', 0x6c63642e6a7067),
+(17, 'Apple ', 20000, 'Apple Laptop with i7 5th Gen', 'Laptops', 0x61342e6a7067),
+(19, 'azsx', 12, 'NA', 'T.V.', 0x62672e6a7067);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `uid` int(30) NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
+  `admin_name` varchar(30) DEFAULT NULL,
+  `admin_pass` varchar(30) DEFAULT NULL,
+  `email_id` varchar(50) DEFAULT NULL,
+  `mobile` varchar(30) DEFAULT NULL,
+  `image` blob,
+  PRIMARY KEY (`uid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`uid`, `username`, `password`, `admin_name`, `admin_pass`, `email_id`, `mobile`, `image`) VALUES
+(1, NULL, NULL, 'admin', 'admin', 'admin1@admin.com', '9800000000', 0x612e6a7067),
+(2, 'Rohit', 'Sharma', 'Rohit', 'Sharma', '7140rs@gmail.com', '9800000001', 0x61322e6a7067),
+(6, 'User1', 'user1', NULL, NULL, 'user1@gmail.com', '9800000003', 0x61322e6a7067),
+(5, 'Tajinder Singh', 'tajinder', NULL, NULL, 'singhtajinder654@gmail.com', '8196082888', 0x61312e6a7067),
+(7, 'user2', 'user2', NULL, NULL, 'user2@gmail.com', '9800000099', 0x61332e6a7067),
+(8, 'kamal', 'kamal', NULL, NULL, 'kamal@123.com', '1238906590', 0x612e6a7067),
+(10, 'user3', 'user3', NULL, NULL, 'user3@gmail.com', '9888888888', 0x61322e6a7067);
