@@ -13,6 +13,7 @@
 The theme of the project is Online Electronic's Shopping .This project is basically showing the flow of pages like login,logout and new user register.Along with these pages, there is also a contact us page so that the user can contact with the developer,if there is an issue.How we can create pages and how the data flow occurs within pages as well as with the database is the basic aim of this project. 
 ### Screenshot
 [Home/Login](![Screenshot (69)](https://user-images.githubusercontent.com/90133900/204263703-9fb1d52a-3d62-4228-946a-73d0a8cf585d.png)
+[Home/Login](![Screenshot ( 69)](https://user-images.githubusercontent.com/90133900/204287677-26276e1f-60ab-40b4-b1a4-1e2cc64344ae.png )
 [Contact Us](![Screenshot (69)](https://user-images.githubusercontent.com/90133900/204264113-866d0a9e-e999-4d34-86ae-65db9e40d3d3.png)
 [New UserRegistration](![Screenshot (69)](https://user-images.githubusercontent.com/90133900/204264618-efc0a95b-83bc-4d42-a9d7-2082d202b483.png)
 [Database](![Screenshot  (71)](https://user-images.githubusercontent.com/90133900/204271691-64c18be0-1a41-4fdf-8b6b-10914dd9b5c0.png) )
